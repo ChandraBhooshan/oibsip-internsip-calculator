@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="grid-container">
+        <div class="row0">
+          <input type="text" id="input-value" />
+        </div>
+        <div class="row0">
+          <input type="text" disabled id="output-value" />
+        </div>
+        <div class="row1">
+          <button
+            class="grid-item row1-grid-item"
+            id="open-cicle-bracket"
+            value=""
+            onclick="display('')"
+          >
+            (
+          </button>
+          <button
+            class="grid-item row1-grid-item"
+            id="close-cicle-bracket"
+            value=""
+            onclick="display('')"
+          >
+            )
+          </button>
+          <button
+            class="grid-item row1-grid-item"
+            id="answer-btn"
+            value=""
+            onclick="calculate()"
+          >
+            ans
+          </button>
+          <button
+            class="grid-item row1-grid-item"
+            id="delete-btn"
+            value=""
+            onclick="clearone()"
+          >
+            del
+          </button>
+          <button
+            class="grid-item row1-grid-item"
+            id="clear-btn"
+            value=""
+            onclick="clearscreen()"
+          >
+            clear
+          </button>
+        </div>
+        <div class="row2">
+          <button
+            class="grid-item row2-789"
+            id="btn-seven"
+            value="7"
+            onclick="display('7')"
+          >
+            7
+          </button>
+          <button
+            class="grid-item row2-789"
+            id="btn-eight"
+            value="8"
+            onclick="display('8')"
+          >
+            8
+          </button>
+          <button
+            class="grid-item row2-789"
+            id="btn-nine"
+            value="9"
+            onclick="display('9')"
+          >
+            9
+          </button>
+          <button
+            class="grid-item row2-modulosqrt"
+            id="btn-modulo"
+            value=""
+            onclick="display('')"
+          >
+            %
+          </button>
+          <button
+            class="grid-item row2-modulosqrt"
+            id="btn-sqrt"
+            value=""
+            onclick="display('')"
+          >
+            sqrt
+          </button>
+        </div>
+        <div class="row3">
+          <button
+            class="grid-item row3-456"
+            id="btn-four"
+            value="4"
+            onclick="display('4')"
+          >
+            4
+          </button>
+          <button
+            class="grid-item row3-456"
+            id="btn-five"
+            value="5"
+            onclick="display('5')"
+          >
+            5
+          </button>
+          <button
+            class="grid-item row3-456"
+            id="btn-siz"
+            value="6"
+            onclick="display('6')"
+          >
+            6
+          </button>
+          <button
+            class="grid-item row3-xdivide"
+            id="btn-into"
+            value="*"
+            onclick="display('*')"
+          >
+            x
+          </button>
+          <button
+            class="grid-item row3-xdivide"
+            id="btn-divide"
+            value="/"
+            onclick="display('/')"
+          >
+            /
+          </button>
+        </div>
+        <div class="row4">
+          <button
+            class="grid-item row4-123"
+            id="btn-one"
+            value="1"
+            onclick="display('1')"
+          >
+            1
+          </button>
+          <button
+            class="grid-item row4-123"
+            id="btn-two"
+            value="2"
+            onclick="display('2')"
+          >
+            2
+          </button>
+          <button
+            class="grid-item row4-123"
+            id="btn-three"
+            value="3"
+            onclick="display('3')"
+          >
+            3
+          </button>
+          <button
+            class="grid-item row4-minusplus"
+            id="btn-plus"
+            value="+"
+            onclick="display('+')"
+          >
+            +
+          </button>
+          <button
+            class="grid-item row4-minusplus"
+            id="btn-minus"
+            value="-"
+            onclick="display('-')"
+          >
+            -
+          </button>
+        </div>
+        <div class="row5">
+          <button
+            class="grid-item row5-dot"
+            id="btn-dot"
+            value="."
+            onclick="display('.')"
+          >
+            .
+          </button>
+          <button
+            class="grid-item row5-0"
+            id="btn-zero"
+            value="0"
+            onclick="display('0')"
+          >
+            0
+          </button>
+          <button
+            class="grid-item row5-minusplus"
+            id="btn-plus-minus"
+            value=""
+            onclick="display('')"
+          >
+            +/-
+          </button>
+          <button
+            class="grid-item row5-enter"
+            id="btn-enter"
+            onclick="calculate()"
+          >
+            Enter
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function display(value) {
+        document.getElementById("input-value").value += value;
+      }
+
+      function clearscreen() {
+        document.getElementById("input-value").value = "";
+        // document.getElementById("output-value").value = "";
+      }
+
+      function calculate() {
+        var p = document.getElementById("input-value").value;
+        var q = eval(p);
+        document.getElementById("output-value").value = q;
+      }
+      function clearone() {
+
+        document.getElementById("input-value").value = document.getElementById("input-value").value.slice(0, -1);
+        
+      }
+      
+      // function getValue() {
+      //   let txt = document.getElementById("id");
+      //   let textvalue = txt.value;
+
+      //   let result = document.getElementById("id");
+      //   result.innerText = textvalue;
+      // }
+      // const zero = document.getElementById("btn-zero").value;
+      // console.log(zero);
+    </script>
+  </body>
+</html>
+
+<!-- <div class="main">
+  <div class="grid-container">
+    <div class="row0">
+      <input type="text" id="value-in" />
+    </div>
+    <div class="row0">
+      <input type="text" disabled id="value-out" />
+    </div>
+    <div class="row1">
+      <button class="grid-item row1-grid-item" id="open-cicle-bracket"
+        >(</button
+      >
+      <button class="grid-item row1-grid-item" id="close-cicle-bracket"
+        >)</button
+      >
+      <button class="grid-item row1-grid-item" id="answer-btn">ans</button>
+      <button class="grid-item row1-grid-item" id="delete-btn">del</button>
+      <button class="grid-item row1-grid-item" id="clear-btn">clear</button>
+    </div>
+    <div class="row2">
+      <button class="grid-item row2-789" id="btn-seven">7</button>
+      <button class="grid-item row2-789" id="btn-eight">8</button>
+      <button class="grid-item row2-789" id="btn-nine">9</button>
+      <button class="grid-item row2-modulosqrt" id="btn-modulo">%</button>
+      <button class="grid-item row2-modulosqrt" id="btn-sqrt">sqrt</button>
+    </div>
+    <div class="row3">
+      <button class="grid-item row3-456" id="btn-four">4</button>
+      <button class="grid-item row3-456" id="btn-five">5</button>
+      <button class="grid-item row3-456" id="btn-siz">6</button>
+      <button class="grid-item row3-xdivide" id="btn-into">x</button>
+      <button class="grid-item row3-xdivide" id="btn-divide">/</button>
+    </div>
+    <div class="row4">
+      <button class="grid-item row4-123" id="btn-one">1</button>
+      <button class="grid-item row4-123" id="btn-two">2</button>
+      <button class="grid-item row4-123" id="btn-three">3</button>
+      <button class="grid-item row4-minusplus" id="btn-plus">+</button>
+      <button class="grid-item row4-minusplus" id="btn-minus">-</button>
+    </div>
+    <div class="row5">
+      <button class="grid-item row5-dot" id="btn-dot">.</button>
+      <button class="grid-item row5-0" id="btn-zero">0</button>
+      <button class="grid-item row5-minusplus" id="btn-plus-minus">+/-</button>
+      <button class="grid-item row5-enter" id="btn-enter">Enter</button>
+    </div>
+  </div>
+</div> -->
