@@ -9,11 +9,16 @@
   <body>
     <div class="main">
       <div class="grid-container">
-        <div class="row0">
-          <input type="text" id="input-value" />
+        <div class="row01">
+          <input
+            type="text"
+            id="input-value"
+            placeholder="Enter expression here"
+            required
+          />
         </div>
-        <div class="row0">
-          <input type="text" disabled id="output-value" />
+        <div class="row02">
+          <input type="text" disabled id="output-value" placeholder="Result" />
         </div>
         <div class="row1">
           <button
@@ -230,73 +235,19 @@
 
       function calculate() {
         var p = document.getElementById("input-value").value;
-        var q = eval(p);
-        document.getElementById("output-value").value = q;
+        if (p == "") {
+          document.getElementById("input-value").placeholder = "no expression entered.";
+
+        } else {
+          var q = eval(p);
+          document.getElementById("output-value").value = q;
+        }
       }
       function clearone() {
-
-        document.getElementById("input-value").value = document.getElementById("input-value").value.slice(0, -1);
-        
+        document.getElementById("input-value").value = document
+          .getElementById("input-value")
+          .value.slice(0, -1);
       }
-      
-      // function getValue() {
-      //   let txt = document.getElementById("id");
-      //   let textvalue = txt.value;
-
-      //   let result = document.getElementById("id");
-      //   result.innerText = textvalue;
-      // }
-      // const zero = document.getElementById("btn-zero").value;
-      // console.log(zero);
     </script>
   </body>
 </html>
-
-<!-- <div class="main">
-  <div class="grid-container">
-    <div class="row0">
-      <input type="text" id="value-in" />
-    </div>
-    <div class="row0">
-      <input type="text" disabled id="value-out" />
-    </div>
-    <div class="row1">
-      <button class="grid-item row1-grid-item" id="open-cicle-bracket"
-        >(</button
-      >
-      <button class="grid-item row1-grid-item" id="close-cicle-bracket"
-        >)</button
-      >
-      <button class="grid-item row1-grid-item" id="answer-btn">ans</button>
-      <button class="grid-item row1-grid-item" id="delete-btn">del</button>
-      <button class="grid-item row1-grid-item" id="clear-btn">clear</button>
-    </div>
-    <div class="row2">
-      <button class="grid-item row2-789" id="btn-seven">7</button>
-      <button class="grid-item row2-789" id="btn-eight">8</button>
-      <button class="grid-item row2-789" id="btn-nine">9</button>
-      <button class="grid-item row2-modulosqrt" id="btn-modulo">%</button>
-      <button class="grid-item row2-modulosqrt" id="btn-sqrt">sqrt</button>
-    </div>
-    <div class="row3">
-      <button class="grid-item row3-456" id="btn-four">4</button>
-      <button class="grid-item row3-456" id="btn-five">5</button>
-      <button class="grid-item row3-456" id="btn-siz">6</button>
-      <button class="grid-item row3-xdivide" id="btn-into">x</button>
-      <button class="grid-item row3-xdivide" id="btn-divide">/</button>
-    </div>
-    <div class="row4">
-      <button class="grid-item row4-123" id="btn-one">1</button>
-      <button class="grid-item row4-123" id="btn-two">2</button>
-      <button class="grid-item row4-123" id="btn-three">3</button>
-      <button class="grid-item row4-minusplus" id="btn-plus">+</button>
-      <button class="grid-item row4-minusplus" id="btn-minus">-</button>
-    </div>
-    <div class="row5">
-      <button class="grid-item row5-dot" id="btn-dot">.</button>
-      <button class="grid-item row5-0" id="btn-zero">0</button>
-      <button class="grid-item row5-minusplus" id="btn-plus-minus">+/-</button>
-      <button class="grid-item row5-enter" id="btn-enter">Enter</button>
-    </div>
-  </div>
-</div> -->
